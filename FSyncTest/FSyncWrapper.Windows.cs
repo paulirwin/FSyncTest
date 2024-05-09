@@ -29,7 +29,7 @@ public partial class FSyncWrapper
     public static void FSyncDirWindows(string dir)
     {
         IntPtr hFile = CreateFileW(dir,
-            0x80000000, // GENERIC_READ, see https://learn.microsoft.com/en-us/windows/win32/secauthz/generic-access-rights
+            0x40000000, // GENERIC_WRITE, see https://learn.microsoft.com/en-us/windows/win32/secauthz/generic-access-rights
             0x00000001, // FILE_SHARE_READ
             IntPtr.Zero,
             3, // OPEN_EXISTING
