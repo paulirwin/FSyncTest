@@ -43,7 +43,7 @@ public partial class FSyncWrapper
 
         if (!FlushFileBuffers(hFile))
         {
-            throw new IOException("FlushFileBuffers failed", Marshal.GetLastWin32Error());
+            throw new IOException($"FlushFileBuffers failed, 0x{Marshal.GetLastWin32Error():x8}", Marshal.GetLastWin32Error());
         }
 
         if (!CloseHandle(hFile))
